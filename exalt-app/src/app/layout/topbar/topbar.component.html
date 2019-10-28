@@ -1,0 +1,13 @@
+<ion-toolbar>
+  <ion-buttons slot="start">
+      <ion-button >
+          <ion-menu-button></ion-menu-button>
+      </ion-button>
+  </ion-buttons>
+  <ion-input type="type" class="no" placeholder="Search for tools,news.."></ion-input>
+  <ion-buttons slot="primary">
+      <ion-button (click)="presentPopover($event)">
+          <ion-icon name="more"></ion-icon>
+      </ion-button>
+  </ion-buttons>
+</ion-toolbar>
