@@ -6,6 +6,7 @@ import { RouterModule } from '@angular/router';
 
 import { HomePage } from './home.page';
 import { LayoutModule } from 'src/app/layout/layout.module';
+import { MSAdal } from '@ionic-native/ms-adal/ngx';
 
 @NgModule({
   imports: [
@@ -20,6 +21,7 @@ import { LayoutModule } from 'src/app/layout/layout.module';
     ]),
     LayoutModule
   ],
-  declarations: [HomePage]
+  declarations: [HomePage],
+
 })
 export class HomePageModule {}
