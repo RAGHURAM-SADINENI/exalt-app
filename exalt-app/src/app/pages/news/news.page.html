@@ -1,14 +1,60 @@
 <ion-app>
   <ion-header style='background-color:white'>    
-      <app-topbar></app-topbar>  
+    <app-topbar></app-topbar>  
   </ion-header>
-  <ion-content style='background-color:#F0F3F8'>
-    <p>yubhkj</p>
-    
+  <ion-content color="medium">
+    <ion-grid>
+      <ion-row>
+        <ion-col ></ion-col>
+        <ion-col >
+          <ion-segment [(ngModel)]="layout" color="light">
+            <ion-segment-button value="grid">
+              <ion-icon name="grid"></ion-icon>
+            </ion-segment-button>
+            <ion-segment-button value="list">
+              <ion-icon name="list"></ion-icon>
+            </ion-segment-button>
+          </ion-segment>
+        </ion-col>
+        <ion-col></ion-col>
+      </ion-row>
+    </ion-grid>
+    <ion-grid [ngSwitch]="layout">
+      <div *ngSwitchCase="'grid'">
+        <ion-row >
+          <ion-col size="6" *ngFor="let n of newsdata">
+            <ion-card color="light">
+              <ion-card-header>
+                <ion-card-subtitle>Card Subtitle</ion-card-subtitle>
+                <ion-card-title>Card Title</ion-card-title>
+              </ion-card-header>              
+              <ion-card-content>
+                Keep close to Nature's heart
+              </ion-card-content>
+            </ion-card>
+          </ion-col>
+        </ion-row>
+      </div>
+      <div  *ngSwitchCase="'list'">
+        <ion-row *ngFor="let n of newsdata">
+          <ion-col>
+            <ion-card color="light">
+              <ion-card-header>
+                <ion-card-subtitle>Card Subtitle</ion-card-subtitle>
+                <ion-card-title>Card Title</ion-card-title>
+              </ion-card-header>              
+              <ion-card-content>
+                Keep close to Nature's heart
+              </ion-card-content>
+            </ion-card>
+        </ion-col>
+      </ion-row>
+    </div>
+    </ion-grid>  
   </ion-content>
   <ion-footer>
-      <ion-toolbar>
-          <app-bottombar></app-bottombar>
-      </ion-toolbar>
+    <ion-toolbar>
+      <app-bottombar></app-bottombar>
+    </ion-toolbar>
   </ion-footer>  
 </ion-app>
